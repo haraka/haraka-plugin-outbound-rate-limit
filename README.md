@@ -3,6 +3,13 @@
 This plugin for Haraka implements outbound rate limits using redis
 as a shared source of the current rates.
 
+# Installation
+
+`npm install --save https://github.com/haraka/haraka-plugin-outbound-rate-limit.git`
+
+Then add `haraka-plugin-outbound-rate-limit` to your config/plugins, and create
+the configuration file for your domains.
+
 # Configuration
 
 Configuration is set in your `config/outbound_rate_limit.ini` file.
