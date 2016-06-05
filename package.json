@@ -1,0 +1,27 @@
+{
+  "name": "haraka-plugin-outbound-rate-limit",
+  "version": "1.0.0",
+  "description": "Haraka Plugin for outbound rate limits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haraka/haraka-plugin-outbound-rate-limit.git"
+  },
+  "keywords": [
+    "haraka",
+    "rate-limit"
+  ],
+  "author": "haraka core team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haraka/haraka-plugin-outbound-rate-limit/issues"
+  },
+  "homepage": "https://github.com/haraka/haraka-plugin-outbound-rate-limit#readme",
+  "dependencies": {
+    "haraka-constants": "^1.0.0",
+    "redis": "^2.6.1"
+  }
+}
