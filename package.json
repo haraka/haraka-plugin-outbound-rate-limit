@@ -25,5 +25,8 @@
   "dependencies": {
     "haraka-constants": "^1.0.0",
     "redis": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint": ">=3"
   }
 }
