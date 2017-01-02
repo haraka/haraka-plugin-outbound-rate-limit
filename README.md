@@ -1,14 +1,13 @@
 # Outbound Rate Limits
 
 This plugin for Haraka implements outbound rate limits using redis
-as a shared source of the current rates.
+as the shared store.
 
 # Installation
 
 `npm install --save https://github.com/haraka/haraka-plugin-outbound-rate-limit.git`
 
-Then add `haraka-plugin-outbound-rate-limit` to your config/plugins, and create
-the configuration file for your domains.
+Then add `outbound-rate-limit` to your config/plugins, and create the configuration file for your domains.
 
 # Configuration
 
@@ -26,5 +25,4 @@ redis_host=127.0.0.1:6379
 
 The counts for the limits are the maximum concurrency for a given outbound domain.
 
-The `delay` value are the number of seconds to delay before trying to send this
-mail again. The concurrency will be checked on every attempt to deliver the mail.
+The `delay` value are the number of seconds to delay before trying to send this mail again. The concurrency will be checked on every attempt to deliver the mail.

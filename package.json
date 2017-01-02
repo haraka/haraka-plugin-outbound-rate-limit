@@ -1,9 +1,10 @@
 {
   "name": "haraka-plugin-outbound-rate-limit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Haraka Plugin for outbound rate limits",
   "main": "index.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,6 +13,7 @@
   },
   "keywords": [
     "haraka",
+    "haraka-plugin",
     "rate-limit"
   ],
   "author": "haraka core team",
@@ -23,5 +25,8 @@
   "dependencies": {
     "haraka-constants": "^1.0.0",
     "redis": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint": ">=3"
   }
 }

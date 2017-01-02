@@ -39,7 +39,6 @@ exports.increment_limit = function (next, hmail) {
 }
 
 exports.decrement_limit = function (next, hmail) {
-    var plugin = this;
 
     var rkey = 'outbound-rate-limit:' + hmail.domain;
     redis_client.hincrby(rkey, 'TOTAL', -1);
