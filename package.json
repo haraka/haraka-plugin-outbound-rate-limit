@@ -27,6 +27,6 @@
     "redis": "^2.6.1"
   },
   "devDependencies": {
-    "eslint": ">=3"
+    "eslint": ">=3.13.0"
   }
 }
