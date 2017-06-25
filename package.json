@@ -1,6 +1,6 @@
 {
   "name": "haraka-plugin-outbound-rate-limit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Haraka Plugin for outbound rate limits",
   "main": "index.js",
   "scripts": {
@@ -23,10 +23,11 @@
   },
   "homepage": "https://github.com/haraka/haraka-plugin-outbound-rate-limit#readme",
   "dependencies": {
-    "haraka-constants": "^1.0.0",
+    "haraka-constants": "*",
     "redis": "^2.6.1"
   },
   "devDependencies": {
-    "eslint": ">=3"
+    "eslint": ">=3",
+    "eslint-plugin-haraka": "*"
   }
 }
