@@ -5,7 +5,7 @@ var constants = require('haraka-constants');
 exports.redis_host = '127.0.0.1:6379';
 var redis_client;
 
-exports.register = function() {
+exports.register = function () {
     var plugin = this;
 
     plugin.load_config();
@@ -72,8 +72,8 @@ exports.init_redis = function () {
     var port = parseInt(host_port[1], 10) || 6379;
 
     redis_client = redis.createClient(port, host);
-    redis_client.on('error', function (err) {
-        self.logerror('Redis error: ' + err);
+    redis_client.on('error', (err) => {
+        this.logerror('Redis error: ' + err);
         redis_client.quit();
         redis_client = null; // should force a reconnect
         // not sure if that's the right thing but better than nothing...
