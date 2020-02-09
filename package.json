@@ -24,7 +24,7 @@
   "homepage": "https://github.com/haraka/haraka-plugin-outbound-rate-limit#readme",
   "dependencies": {
     "haraka-constants": "*",
-    "redis": "^2.6.1"
+    "redis": "^3.0.0"
   },
   "devDependencies": {
     "eslint": ">=3",
