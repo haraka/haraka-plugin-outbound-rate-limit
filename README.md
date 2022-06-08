@@ -2,9 +2,9 @@
 
 This plugin has been replaced by [haraka-plugin-limit](https://github.com/haraka/haraka-plugin-limit)
 
-## Outbound Rate Limits
+----
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/haraka/haraka-plugin-outbound-rate-limit.svg)](https://greenkeeper.io/)
+## Outbound Rate Limits
 
 This plugin for Haraka implements outbound rate limits using redis
 as the shared store.
