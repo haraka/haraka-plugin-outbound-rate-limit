@@ -43,5 +43,16 @@ bower_components
 .idea
 .DS_Store
 haraka-update.sh
+
+.github
 .release
+.codeclimate.yml
+.editorconfig
+.gitignore
 .gitmodules
+.lgtm.yml
+appveyor.yml
+codecov.yml
+.travis.yml
+.eslintrc.yaml
+.eslintrc.json
