@@ -1,6 +1,6 @@
 {
   "name": "haraka-plugin-outbound-rate-limit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Haraka Plugin for outbound rate limits",
   "main": "index.js",
   "scripts": {
