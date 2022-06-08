@@ -43,3 +43,5 @@ bower_components
 .idea
 .DS_Store
 haraka-update.sh
+.release
+.gitmodules
