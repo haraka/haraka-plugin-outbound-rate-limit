@@ -1,12 +1,12 @@
 "use strict";
 
-var constants = require('haraka-constants');
+const constants = require('haraka-constants');
 
 exports.redis_host = '127.0.0.1:6379';
-var redis_client;
+let redis_client;
 
 exports.register = function () {
-    var plugin = this;
+    const plugin = this;
 
     plugin.load_config();
     plugin.init_redis();
@@ -18,18 +18,18 @@ exports.register = function () {
 }
 
 exports.increment_limit = function (next, hmail) {
-    var plugin = this;
+    const plugin = this;
 
-    var rkey = 'outbound-rate-limit:' + hmail.domain;
+    const rkey = `outbound-rate-limit:${  hmail.domain}`;
     redis_client.hincrby(rkey, 'TOTAL', 1);
     redis_client.hget(rkey, 'TOTAL', function (err, count) {
         if (err) {
-            plugin.logerror("Failed to get value from redis: " + err);
+            plugin.logerror(`Failed to get value from redis: ${  err}`);
             return next(); // just deliver
         }
         count = parseInt(count, 10);
         if (plugin.cfg.limits[hmail.domain]) {
-            var limit = parseInt(plugin.cfg.limits[hmail.domain], 10);
+            const limit = parseInt(plugin.cfg.limits[hmail.domain], 10);
             if (limit && count > limit) {
                 return next(constants.delay, plugin.delay);
             }
@@ -40,13 +40,13 @@ exports.increment_limit = function (next, hmail) {
 
 exports.decrement_limit = function (next, hmail) {
 
-    var rkey = 'outbound-rate-limit:' + hmail.domain;
+    const rkey = `outbound-rate-limit:${  hmail.domain}`;
     redis_client.hincrby(rkey, 'TOTAL', -1);
     return next();
 }
 
 exports.load_config = function () {
-    var plugin = this;
+    const plugin = this;
 
     plugin.cfg = plugin.config.get('outbound_rate_limit.ini', {
         booleans: [],
@@ -59,21 +59,21 @@ exports.load_config = function () {
     if (plugin.cfg.main.redis_host &&
         plugin.cfg.main.redis_host !== plugin.redis_host) {
         plugin.redis_host = plugin.cfg.main.redis_host;
-        plugin.loginfo('set redis host to: ' + plugin.redis_host);
+        plugin.loginfo(`set redis host to: ${  plugin.redis_host}`);
     }
 };
 
 exports.init_redis = function () {
     if (redis_client) { return; }
 
-    var redis = require('redis');
-    var host_port = this.redis_host.split(':');
-    var host = host_port[0] || '127.0.0.1';
-    var port = parseInt(host_port[1], 10) || 6379;
+    const redis = require('redis');
+    const host_port = this.redis_host.split(':');
+    const host = host_port[0] || '127.0.0.1';
+    const port = parseInt(host_port[1], 10) || 6379;
 
     redis_client = redis.createClient(port, host);
     redis_client.on('error', (err) => {
-        this.logerror('Redis error: ' + err);
+        this.logerror(`Redis error: ${  err}`);
         redis_client.quit();
         redis_client = null; // should force a reconnect
         // not sure if that's the right thing but better than nothing...
